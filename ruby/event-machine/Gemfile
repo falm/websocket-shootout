@@ -1,3 +1,5 @@
 source 'http://gems.ruby-china.org/'
 
 gem 'em-websocket'
+
+gem 'stackprof', '~> 0.2.7'

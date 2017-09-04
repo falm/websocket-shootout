@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://gems.ruby-china.org/
   specs:
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -8,6 +8,7 @@ GEM
     eventmachine (1.2.0.1-java)
     http_parser.rb (0.6.0)
     http_parser.rb (0.6.0-java)
+    stackprof (0.2.10)
 
 PLATFORMS
   java
@@ -15,6 +16,7 @@ PLATFORMS
 
 DEPENDENCIES
   em-websocket
+  stackprof (~> 0.2.7)
 
 BUNDLED WITH
-   1.12.5
+   1.15.0

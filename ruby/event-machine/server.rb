@@ -1,9 +1,10 @@
 require 'em-websocket'
 require 'json'
 require 'optparse'
+require 'stackprof'
 
 address = "0.0.0.0"
-port = 8080
+port = 3334
 
 OptionParser.new do |opts|
   opts.banner = "Usage: bundle exec server.rb [options]"
@@ -17,11 +18,16 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-EM.epoll
+EM.epoll if EM.epoll?
+EM.kqueue if EM.kqueue?
+
+  #EM.threadpool_size = 8
 EM.run {
+
   @channel = EM::Channel.new
 
   EM::WebSocket.run(:host => address, :port => port) do |ws|
+    StackProf.run(mode: :wall, raw: true, out: 'tmp/stackprof.dump', interval: 1000, save_every: 5) do
     ws.onopen {
       @channel.subscribe {|msg| ws.send msg }
     }
