@@ -1,4 +1,8 @@
 require ::File.expand_path('../environment', __FILE__)
-Rails.application.eager_load!
 
-run ActionCable.server
+require 'memory_profiler'
+
+# MemoryProfiler.report do
+  Rails.application.eager_load!
+  run ActionCable.server
+# end.pretty_print

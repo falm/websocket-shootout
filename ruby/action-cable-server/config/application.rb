@@ -25,5 +25,8 @@ module ActionCableServer
     # Do not care about origin in benchmarks
     config.action_cable.mount_path = '/cable'
     config.action_cable.disable_request_forgery_protection = true
+
+    config.middleware.use(StackProf::Middleware, raw: true, enabled: true, mode: :wall, interval: 1000, save_every: 5)
+    # config.middleware.use(Rack::RubyProf, path: Rails.root.join('tmp', 'profile'))
   end
 end

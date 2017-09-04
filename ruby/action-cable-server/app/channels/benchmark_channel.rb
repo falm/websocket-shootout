@@ -10,8 +10,14 @@ class BenchmarkChannel < ApplicationCable::Channel
   end
 
   def broadcast(data)
+    # report = MemoryProfiler.report do
     ActionCable.server.broadcast "all", data
     data["action"] = "broadcastResult"
     ActionCable.server.broadcast id, data
+    # end
+
+    # report.pretty_print(to_file: Rails.root.join('tmp', 'broadcast_mem.txt'))
+  #
+
   end
 end

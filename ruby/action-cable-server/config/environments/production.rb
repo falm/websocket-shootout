@@ -76,4 +76,6 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  # config.middleware.use Oink::Middleware, :instruments => :memory, :logger => Rails.logger
 end
