@@ -1,4 +1,15 @@
 source 'http://gems.ruby-china.org/'
 
 gem 'faye-websocket'
+
 gem 'puma'
+
+gem 'thin'
+
+gem 'stackprof', '~> 0.2.7'
+
+gem 'ruby-prof'
+
+gem 'memory_profiler'
+
+gem 'redis'
