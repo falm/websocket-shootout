@@ -1,4 +1,7 @@
 source 'http://gems.ruby-china.org/'
 
-gem 'iodine'
-gem 'plezi'
+gem 'iodine', '0.4'
+
+gem 'plezi', '0.15'
+
+gem 'stackprof'
