@@ -49,5 +49,7 @@ class WebsocketAPI < Midori::API
 end
 
 
+Midori::Configure.set :port, 3334
+Midori::Configure.set :bind, '0.0.0.0'
 Midori::Runner.new(WebsocketAPI).start
 
