@@ -1,0 +1,15 @@
+
+source 'https://gems.ruby-china.org'
+
+gem 'em-midori', require: :midori
+
+gem 'redis'
+
+gem 'redic'
+
+gem 'eventmachine'
+
+gem 'em-hiredis'
+
+
+
