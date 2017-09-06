@@ -27,7 +27,7 @@ EM.run {
   @channel = EM::Channel.new
 
   EM::WebSocket.run(:host => address, :port => port) do |ws|
-    StackProf.run(mode: :wall, raw: true, out: 'tmp/stackprof.dump', interval: 1000, save_every: 5) do
+    # StackProf.run(mode: :wall, raw: true, out: 'tmp/stackprof.dump', interval: 1000, save_every: 5) do
     ws.onopen {
       @channel.subscribe {|msg| ws.send msg }
     }
